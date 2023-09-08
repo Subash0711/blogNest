@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{title}}</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body style="background-color: #14161f">
+    <div class="container-fluid" style="background-color: #14161f;">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card" style="margin-top: 35px; background-color: #1d1f2e;">
+                    <div class="card-header" style="background-color: #303745;">
+                        <h2 style="color: #66d9ef;">Login</h2>
+                    </div>
+                    <div class="card-body" style="background-color: #21273a;">
+                        <form method="post">
+                            
+                            <div class="form-group row m-3">
+                                <label for="username" class="col-md-4 col-form-label text-md-right"
+                                    style="color: #66d9ef;">Username</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="username" class="form-control" name="username"
+                                        style="background-color: #2b3246; color: #ffffff;" required>
+                                </div>
+                            </div>
+                            <div class="form-group row m-3">
+                                <label for="userpassword" class="col-md-4 col-form-label text-md-right"
+                                    style="color: #66d9ef;">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" id="userpassword" class="form-control" name="userpassword"
+                                        style="background-color: #2b3246; color: #ffffff;" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6 offset-md-5">
+                                <button type="submit" class="btn btn-success"
+                                    style="background-color: #36c4e0;">Submit</button>
+                            </div>
+                            <div class="form-group row m-3">
+                                <label class="col-md-4 col-form-label text-md-right"
+                                    style="font-size: smaller; color: #66d9ef;">Not a member?<a
+                                        href="{% url 'Signup-View' %}"
+                                        style="text-decoration: none; color: #ffffff; font-size: small;"
+                                        class="link-light mx-2">Create Now</a></label>
+                            </div>
+                            {% if exception %}
+                            <div class="row mb-5 gx-5 rounded justify-content-md-end" style="position: fixed; top: 0; right: 0;width: 50rem;">
+                                <div class="col-md-12 m-5 p-3 rounded alert alert-danger"  id="alert-box" style="display: inline-block;width: auto;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" style="fill: #a04d4d;"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+                                    <strong>{{exception}}</strong>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% if message %}
+                            <div class="row mb-5 gx-5 rounded justify-content-md-end" style="position: fixed; top: 0; right: 0;width: 50rem;">
+                                <div class="col-md-12 m-5 p-3 rounded alert alert-success"  id="alert-box" style="display: inline-block;width: auto;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm16.28-2.72a.751.751 0 0 0-.018-1.042.751.751 0 0 0-1.042-.018l-5.97 5.97-2.47-2.47a.751.751 0 0 0-1.042.018.751.751 0 0 0-.018 1.042l3 3a.75.75 0 0 0 1.06 0Z"></path></svg>
+                                    <strong>{{ message }}</strong>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    $(document).ready(function () {
+        setTimeout(function() {
+        $("#alert-box").fadeOut("slow");
+        }, 3500); 
+    })
+</script>
