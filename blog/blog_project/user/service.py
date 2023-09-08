@@ -59,7 +59,7 @@ class userLoginService:
             password=request.POST.get('user_password')
             encPassword=make_password(password=password)
             data=BlogUsers(fullname=fullname,gender=gender,emailid=emailId,username=username,mobile_no=phonenumber,password=encPassword)
-            # data.save()
+            data.save()
             url= reverse('Login-View')
             request.session['message'] = messages.CREATE_USER_SUCCESS_MSG
             return redirect(url)
