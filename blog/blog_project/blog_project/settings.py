@@ -86,11 +86,11 @@ SECRET_KEY="jdvjhsdyufjfjmgewhf"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blognest_db', 
-        'USER': 'blognestdb',
-        'PASSWORD': 'blog.123',
-        'HOST': 'db-blognest.cphrtm5rjeej.eu-north-1.rds.amazonaws.com', 
-        'PORT': '5432',
+        'NAME': 'bolgNest', 
+        'USER': 'postgres',
+        'PASSWORD': 2023,
+        'HOST': 'localhost', 
+        'PORT': '5433',
     }
 }
 
