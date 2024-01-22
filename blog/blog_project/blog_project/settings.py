@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+lq-%+avk2f(ejg4z3to78mu1zic6b64=v%m0n!&h**#ja_7#0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['159.89.166.14']
 
 
 # Application definition
@@ -86,9 +86,9 @@ SECRET_KEY="jdvjhsdyufjfjmgewhf"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bolgNest', 
-        'USER': 'postgres',
-        'PASSWORD': 2023,
+        'NAME': 'blog_nest', 
+        'USER': 'admin',
+        'PASSWORD': '2023',
         'HOST': 'localhost', 
         'PORT': '5433',
     }
