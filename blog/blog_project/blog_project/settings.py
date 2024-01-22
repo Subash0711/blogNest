@@ -86,9 +86,9 @@ SECRET_KEY="jdvjhsdyufjfjmgewhf"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'blog_nest', 
-        'USER': 'admin',
-        'PASSWORD': '2023',
+        'NAME': 'blogdb', 
+        'USER': 'temp',
+        'PASSWORD': 'test@123',
         'HOST': 'localhost', 
         'PORT': '',
     }
